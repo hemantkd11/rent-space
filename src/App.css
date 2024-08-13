@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -34,5 +34,73 @@
   }
   to {
     transform: rotate(360deg);
+  }
+} */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  /* background-image: url(./Image/personalplace1.jpg); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+:root {
+  --w100: 100%;
+  --w90: 90%;
+  --w80: 80%;
+  --height-nav: 80px;
+  --app-theme: #f2ff00;
+  --text-small: #1f1f1f;
+  --heading: #113e66;
+  --font-text: 1.5rem;
+  --font-bold: 500;
+  --font-heading: 3rem;
+  --font-subtext: 2rem;
+  --displayFlex: flex;
+  --flex-directcol: column;
+  --flex-directrow: row;
+}
+.home-page {
+  height: 95vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 3s ease-in-out;
+}
+.Nav-container {
+  width: var(--w100);
+  /* height: var(--height-nav); */
+  background-color: var(--app-theme);
+  display: var(--displayFlex);
+  align-items: center;
+  justify-content: center;
+}
+.Nav-container .Nav-limit-container {
+  width: var(--w80);
+}
+.Nav-container .Nav-limit-container .Nav-wrapper {
+  width: var(--w100);
+  display: var(--displayFlex);
+  flex-direction: var(--flex-directrow);
+  justify-content: space-between;
+  background-color: var(--app-theme);
+  align-items: center;
+}
+.Nav-container .Nav-limit-container .Nav-wrapper .Nav-menu-box {
+  display: var(--displayFlex);
+  flex-direction: var(--flex-directrow);
+  align-items: center;
+  justify-content: center;
+  color: beige;
+}
+@media (max-width: 700px) {
+  .Nav-container .Nav-limit-container {
+    width: var(--w100);
   }
 }
