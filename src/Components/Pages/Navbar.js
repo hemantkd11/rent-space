@@ -2,6 +2,7 @@ import React from "react";
 // import { Link, useNavigate } from "react-router-dom";
 // import MenuIcon from "@mui/icons-material/Menu";
 import "./navstyle.css";
+import { Link } from "react-router-dom";
 const Logo = () => (
   <>
     <span className="span-onspace">
@@ -48,18 +49,18 @@ const ClodeMenu = () => {
   );
 };
 const NavlistScreen1000 = [
-  { name: <Logo />, className: "logo", id: 1, link: "/#" },
+  { name: <Logo />, className: "logo", id: 1, link: "/Home" },
 
   {
     name: "Home",
     className: "hideonMobile",
-    link: "/#",
+    link: "/Home",
     id: 2,
   },
   {
     name: "Place",
     className: "hideonMobile",
-    link: "/#",
+    link: "/Places",
     id: 3,
   },
   {
@@ -80,7 +81,7 @@ const Mobileview = [
   {
     name: <ClodeMenu />,
     // className: "Menu-btn",
-    link: "/#",
+    link: "/Home",
     id: 5,
   },
 
@@ -93,13 +94,19 @@ const Mobileview = [
   {
     name: "Place",
     // className: "nav-places",
-    link: "/#",
+    link: "/Places",
     id: 3,
   },
   {
     name: "Contact",
     // className: "nav-contact",
     link: "/#",
+    id: 4,
+  },
+  {
+    name: "PlacesView",
+    // className: "nav-contact",
+    link: "/PlacesView",
     id: 4,
   },
 ];
@@ -112,9 +119,9 @@ const Navbar = () => {
             {NavlistScreen1000 ? (
               NavlistScreen1000.map((item) => (
                 <li key={item.id} className={item.className}>
-                  <a key={item.id} href={item.link}>
+                  <Link key={item.id} to={item.link}>
                     {item.name}
-                  </a>
+                  </Link>
                 </li>
               ))
             ) : (

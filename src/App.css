@@ -39,14 +39,13 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   min-height: 100vh;
   /* background-image: url(./Image/personalplace1.jpg); */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 :root {
@@ -57,29 +56,29 @@ body {
   --app-theme: #f2ff00;
   --text-small: #1f1f1f;
   --heading: #113e66;
-  --font-text: 1.5rem;
+  --font-text: 1.3vw;
   --font-bold: 500;
-  --font-heading: 3rem;
-  --font-subtext: 2rem;
+  --font-heading: 2.7vw;
+  --font-subtext: 1.5vw;
   --displayFlex: flex;
   --flex-directcol: column;
   --flex-directrow: row;
+  --input-pading: 10px;
+  --font-text-input: 15px;
 }
-.home-page {
-  height: 95vh;
-  width: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  transition: 3s ease-in-out;
-}
+
 .Nav-container {
+  position: fixed;
   width: var(--w100);
+  top: 0;
+  /* margin-bottom: 8000px; */
   /* height: var(--height-nav); */
   background-color: var(--app-theme);
   display: var(--displayFlex);
   align-items: center;
   justify-content: center;
+  z-index: 1000;
+  /* margin-bottom: 60px; */
 }
 .Nav-container .Nav-limit-container {
   width: var(--w80);
@@ -99,8 +98,467 @@ body {
   justify-content: center;
   color: beige;
 }
+
+/* Home page css start */
+.App-page-container {
+  width: var(--w100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+.home-css {
+  height: 95vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 3s ease-in-out;
+}
+
+.App-page-Inner-container {
+  width: var(--w80);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.App-page-wrapper {
+  width: var(--w100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10vh;
+}
+.home-css-wrapper {
+  height: 95vh;
+}
+.Home-page-heading {
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  width: var(--w100);
+  font-family: sans-serif;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(247, 247, 247);
+  font-weight: 500;
+  text-shadow: 2px 2px 4px var(--app-theme);
+  font-size: var(--font-heading);
+  text-align-last: center;
+  text-transform: capitalize;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-align: center;
+  /* box-shadow: 0px 0px 30px rgb(204, 183, 26); */
+}
+.Home-page-heading span {
+  font-family: Brush Script MT, cursive;
+  text-align: center;
+  text-align-last: center;
+}
+.Home-page-heading .home-page-btn {
+  padding: 10px 30px;
+  font-size: 1.3rem;
+  background-color: transparent;
+  color: white;
+  font-weight: 700;
+  border-radius: 8px;
+  border: 1px solid var(--app-theme);
+}
+.Home-page-heading .home-page-btn:hover {
+  color: #191919;
+  border: none;
+  background-color: rgb(227, 227, 227);
+}
+.slot-input-box {
+  display: flex;
+  flex-direction: column;
+  width: var(--w100);
+  height: auto;
+  padding: 0px 2px;
+  /* box-shadow: 0 0 4px black;  */
+  border-radius: 10px;
+  /* overflow: hidden; */
+  position: relative;
+}
+.slot-heading {
+  width: var(--w100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3% 0;
+  /* background-color: #f2ff00; */
+}
+.input-box input {
+  border: none;
+  border-bottom: 1px solid lightgray;
+  outline: none;
+}
+.slot-input-search-date-time {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: var(--w100);
+  padding: 1% 0;
+  box-shadow: 0 0 4px black;
+  border-radius: 10px;
+}
+
+.slot-search-input-box {
+  width: 50%;
+  border: none;
+  outline: none;
+  padding: var(--input-pading);
+
+  /* border-width: 1px 0px 1px 1px; */
+}
+.slot-input-search {
+  width: var(--w100);
+  border: none;
+  font-size: var(--font-text-input);
+  outline: none;
+  background-color: transparent;
+  padding: var(--input-pading);
+}
+.slot-input-from-too {
+  width: 50%;
+  box-sizing: border-box;
+  display: flex;
+}
+.slot-input-from-too-wrapper {
+  width: var(--w100);
+  display: flex;
+  box-sizing: border-box;
+}
+.slot-date-time-from {
+  width: 50%;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  padding: var(--input-pading);
+  font-size: var(--font-text);
+  border-left: 1px solid rgb(92, 90, 90);
+}
+
+.slot-date-time-too {
+  width: 50%;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  padding: var(--input-pading);
+  font-size: var(--font-text);
+
+  border-left: 1px solid rgb(92, 90, 90);
+}
+.search-date-time-submit-btn {
+  width: var(--w100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0px;
+}
+.slot-search-btn {
+  padding: 10px 40px;
+  font-size: var(--font-text);
+  border-radius: 5px;
+  background-color: #f2ff00;
+  border: none;
+  position: absolute;
+  top: 95%;
+}
+.cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+.card {
+  height: 4rem;
+  background-color: blue;
+  padding: 1rem;
+}
+
+/* Home page css end  */
+
+.Banner-container {
+  width: var(--w100);
+  /* padding: 20px 10px; */
+  background-image: url(./Image/bannerBackground.jpg);
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 6px;
+  box-shadow: 0 0 4px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-wrapper {
+  /* width: var(--w100); */
+  display: flex;
+  width: 70%;
+  align-items: center;
+  justify-content: space-between;
+
+  /* flex-direction: ; */
+}
+
+.Banner-offer-img {
+  max-width: 30%;
+  height: auto;
+}
+.Banner-offer-img img {
+  width: var(--w100);
+}
+.left-banner-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.3rem;
+  padding: 0px 5px;
+}
+.left-banner-part1 {
+  font-size: var(--font-heading);
+  font-weight: var(--font-bold);
+}
+.banner-btn {
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: #1f1f1f;
+  color: white;
+  font-size: var(--font-text);
+}
+
+.right-banner-img {
+  width: 28%;
+  overflow: hidden;
+  height: 100%;
+  border-radius: 1000px 0px 0px 0px;
+}
+.banner-right-side {
+  width: 30%;
+  background-image: url(./Image/personalplace1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 1000px 0px 0px 0px;
+  height: 24vw;
+}
+.right-banner-wrapper {
+  background-position: center;
+
+  width: 100%;
+}
+.Banner2-wrapper {
+  background-image: url(./Image/Banner2-theme.jpg);
+  width: var(--w100);
+  height: 150px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 6px;
+  box-shadow: 0 0 4px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Banner2-box {
+  padding: 10px;
+  width: var(--w100);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+.banner2-text {
+  width: var(--w100);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-right: 1px solid white;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: var(--font-subtext);
+  height: 50px;
+}
+.banner2-book-btn {
+  width: var(--w100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid white;
+  height: 50px;
+}
+.banner2-offer-box {
+  width: var(--w100);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 150px;
+  font-size: var(--font-subtext);
+}
+.PlacesViewCard {
+  width: var(--w100);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-sizing: border-box;
+}
+.place-img {
+  width: 700px;
+  height: 350px;
+}
+.place-img img {
+  width: var(--w100);
+  height: 100%;
+}
+.placesView-details-box {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 700px);
+  height: 300px;
+  justify-content: space-between;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+.placesView-placeName .h3 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #222;
+}
+.placeview-rating {
+  display: flex;
+  gap: 20px;
+  font-weight: 500;
+}
+.rating-digit {
+  background-color: yellow;
+  padding: 6px 10px;
+}
+.placeview-price {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+}
+.placeview-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.common-btn {
+  font-size: 25px;
+  padding: 8px 10px;
+  font-weight: 700;
+  background-color: white;
+  border-radius: 5px;
+}
+.placesView-BookNow {
+  background-color: #1ab64f;
+  color: white;
+}
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media (max-width: 700px) {
+  .place-img {
+    width: auto;
+    height: 250px;
+  }
+  .common-btn {
+    font-size: 15px;
+  }
+  .placesView-BookNow {
+    font-size: 15px;
+  }
+  .placesView-placeName .h3 {
+    font-size: 20px;
+  }
   .Nav-container .Nav-limit-container {
     width: var(--w100);
   }
+  .right-banner-wrapper {
+    height: 28vw;
+  }
+}
+@media (max-width: 900px) {
+  .PlacesViewCard {
+    width: var(--w100);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .slot-input-search-date-time {
+    display: flex;
+    flex-direction: column;
+  }
+  .slot-search-input-box {
+    width: var(--w100);
+  }
+  .slot-input-search {
+    border-bottom: 1px solid lightgray;
+    border-radius: 10px;
+  }
+  .slot-input-from-too {
+    width: var(--w100);
+    padding: var(--input-pading);
+  }
+  .slot-date-time-from {
+    border: none;
+    font-size: var(--font-text-input);
+  }
+  .slot-date-time-too {
+    font-size: var(--font-text-input);
+  }
+}
+@media (max-width: 1200px) {
+  .PlacesViewCard {
+    width: var(--w100);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .placesView-details-box {
+    padding: 20px;
+    width: var(--w100);
+    gap: 20px;
+    height: auto;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
