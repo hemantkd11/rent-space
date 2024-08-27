@@ -1,19 +1,39 @@
 {
   "files": {
-    "main.css": "/rent-space/static/css/main.852a47ef.css",
-    "main.js": "/rent-space/static/js/main.6bd1da60.js",
+    "main.css": "/rent-space/static/css/main.82697cd5.css",
+    "main.js": "/rent-space/static/js/main.8bbb35a6.js",
     "static/js/453.18e8072a.chunk.js": "/rent-space/static/js/453.18e8072a.chunk.js",
+    "static/media/on_space_place1.jpg": "/rent-space/static/media/on_space_place1.a5cc0cab96eebfe0a04a.jpg",
     "static/media/personalplace1.jpg": "/rent-space/static/media/personalplace1.ea8b20b6abc4c923a394.jpg",
-    "static/media/partyPlace1.jpg": "/rent-space/static/media/partyPlace1.e523a14f7cc9fe336a8c.jpg",
-    "static/media/officeplace1.webp": "/rent-space/static/media/officeplace1.ce8ab9b69d6f58efb5b0.webp",
-    "static/media/logo.svg": "/rent-space/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/party_place2.jpg": "/rent-space/static/media/party_place2.6dd3fa685087313eab26.jpg",
+    "static/media/party_place4.jpg": "/rent-space/static/media/party_place4.e43cca0015e5a63ee110.jpg",
+    "static/media/place4.webp": "/rent-space/static/media/place4.74dff91beaa16085a6c8.webp",
+    "static/media/bannerBackground.jpg": "/rent-space/static/media/bannerBackground.59e7c4fa0a337d047bdf.jpg",
+    "static/media/Banner2-theme.jpg": "/rent-space/static/media/Banner2-theme.f75366601b4d2020a2ce.jpg",
+    "static/media/open_place5.jpg": "/rent-space/static/media/open_place5.4787e27ee1deba39e7e5.jpg",
+    "static/media/open_place6.jpg": "/rent-space/static/media/open_place6.cb20d408042c375cfa58.jpg",
+    "static/media/open_place4.jpg": "/rent-space/static/media/open_place4.e3e784de78fb4e22a44b.jpg",
+    "static/media/party_place1.jpg": "/rent-space/static/media/party_place1.5116530f8ed6895a33a0.jpg",
+    "static/media/open_place7.jpg": "/rent-space/static/media/open_place7.49aa76dd39de5879c5ad.jpg",
+    "static/media/meeting_place2.jpg": "/rent-space/static/media/meeting_place2.3ceb64b24dc37561c36a.jpg",
+    "static/media/meeting_place1.jpg": "/rent-space/static/media/meeting_place1.e273db758b601555f176.jpg",
+    "static/media/open_place1.jpg": "/rent-space/static/media/open_place1.2f8f17a4dcb07e085083.jpg",
+    "static/media/meeting_place7.jpg": "/rent-space/static/media/meeting_place7.6c1d0030ecf3dd2f0147.jpg",
+    "static/media/party_place5.jpg": "/rent-space/static/media/party_place5.c2d867a4368f71d81f0d.jpg",
+    "static/media/open_place3.jpg": "/rent-space/static/media/open_place3.60d4667faed94a58a920.jpg",
+    "static/media/party_place6.jpg": "/rent-space/static/media/party_place6.f158e8cc0ab75bd5143b.jpg",
+    "static/media/party_place3.jpg": "/rent-space/static/media/party_place3.1011765f6e1582e3d483.jpg",
+    "static/media/meeting_place8.jpg": "/rent-space/static/media/meeting_place8.55127200cff817b418e9.jpg",
+    "static/media/open_place8.jpg": "/rent-space/static/media/open_place8.03baef0744ee4ca1bd68.jpg",
+    "static/media/meeting_place3.jpg": "/rent-space/static/media/meeting_place3.83e7df517ba4ce3fee1b.jpg",
+    "static/media/party_place7.jpg": "/rent-space/static/media/party_place7.83e7df517ba4ce3fee1b.jpg",
     "index.html": "/rent-space/index.html",
-    "main.852a47ef.css.map": "/rent-space/static/css/main.852a47ef.css.map",
-    "main.6bd1da60.js.map": "/rent-space/static/js/main.6bd1da60.js.map",
+    "main.82697cd5.css.map": "/rent-space/static/css/main.82697cd5.css.map",
+    "main.8bbb35a6.js.map": "/rent-space/static/js/main.8bbb35a6.js.map",
     "453.18e8072a.chunk.js.map": "/rent-space/static/js/453.18e8072a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.852a47ef.css",
-    "static/js/main.6bd1da60.js"
+    "static/css/main.82697cd5.css",
+    "static/js/main.8bbb35a6.js"
   ]
 }
