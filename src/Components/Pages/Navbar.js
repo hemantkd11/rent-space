@@ -70,6 +70,19 @@ const NavlistScreen1000 = [
     id: 4,
   },
   {
+    name: "CheckOut",
+    className: "hideonMobile",
+    link: "/checkout",
+    id: 5,
+  },
+  {
+    name: "PlaceView",
+    className: "hideonMobile",
+    link: "/PlacesView",
+    id: 6,
+  },
+
+  {
     name: <Menu />,
     className: "hideonlaptop",
     link: "/#",
