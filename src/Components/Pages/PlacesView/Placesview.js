@@ -52,6 +52,8 @@ export const PlacesView = () => {
       type: "Place_Details",
       items: Add_Time,
     });
+    localStorage.setItem(" Card_details", JSON.stringify(Add_Time));
+    Navigate("/savedlist");
   };
   const HandleBooking = (id, img, place, rating, price) => {
     const Add_Time = {
