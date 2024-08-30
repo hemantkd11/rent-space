@@ -2,10 +2,21 @@ import React, { useEffect, useState } from "react";
 import SlotBox from "../Places/SlotDateTime";
 import { DB } from "../../../Data/Db";
 import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../../Utils/Button";
 import { useStateValue } from "../../Context/UseContext";
 export const PlacesView = () => {
-  //   const [{ Add_Date_Time_Details }] = useStateValue();
+  const Navigate = useNavigate();
+  const [{ Add_Date_Time_Details, Card_details, WayToMakePayment }, dispatch] =
+    useStateValue();
+  if (!Add_Date_Time_Details) {
+    console.error("Add_data_time is undefined");
+  } else {
+    console.log(Add_Date_Time_Details);
+    console.log("Card_details", Card_details);
+    console.log("WayToMakePayment", WayToMakePayment);
+  }
+  //   console.log("Add_Date_Time_Details", Add_Date_Time_Details);
   const location = useLocation();
   const [filterDb, setFilterDb] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -27,6 +38,41 @@ export const PlacesView = () => {
   // Determine total number of pages
   const totalPages = Math.ceil(filterDb.length / cardsPerPage);
 
+  const HandleSaveItem = (id, img, place, rating, price, e) => {
+    const Add_Time = {
+      dateTimeIn,
+      dateTimeOut,
+      id,
+      img,
+      place,
+      rating,
+      price,
+    };
+    dispatch({
+      type: "Place_Details",
+      items: Add_Time,
+    });
+  };
+  const HandleBooking = (id, img, place, rating, price) => {
+    const Add_Time = {
+      dateTimeIn,
+      dateTimeOut,
+      id,
+      img,
+      place,
+      rating,
+      price,
+    };
+    // localStorage.clear();
+    dispatch({
+      type: "WayToBook",
+      items: Add_Time,
+    });
+
+    localStorage.setItem(" WayToMakePayment", JSON.stringify(Add_Time));
+    Navigate("/checkout");
+  };
+
   useEffect(() => {
     if (search) {
       const filterDataByArea = DB.flatMap((item) =>
@@ -41,7 +87,7 @@ export const PlacesView = () => {
       setFilterDb([]);
     }
   }, [search]);
-  console.log(filterDb);
+  console.log("filterDb0", filterDb);
   return (
     <div className=" App-page-container ">
       <div className=" App-page-Inner-container">
@@ -73,8 +119,37 @@ export const PlacesView = () => {
                           btn_name="View Details"
                         />
                         <Button
+                          onClick={() =>
+                            HandleBooking(
+                              item.id,
+                              item.img_url,
+                              item.place_name,
+                              item.rating,
+                              item.price
+                            )
+                          }
                           className="common-btn placesView-BookNow"
                           btn_name="Book Now"
+                        />
+                        <Button
+                          onClick={() =>
+                            HandleSaveItem(
+                              item.id,
+                              item.img_url,
+                              item.place_name,
+                              item.rating,
+                              item.price
+                            )
+                          }
+                          className="Save_Items_btn "
+                          btn_name={
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 384 512"
+                            >
+                              <path d="M0 48C0 21.5 21.5 0 48 0l0 48 0 393.4 130.1-92.9c8.3-6 19.6-6 27.9 0L336 441.4 336 48 48 48 48 0 336 0c26.5 0 48 21.5 48 48l0 440c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488L0 48z" />
+                            </svg>
+                          }
                         />
                       </div>
                     </div>

@@ -75,6 +75,7 @@ export const DB = [
               "Zero(0) km Club Night King  Excusive Place For Family Day Out Near kormangla",
             price: 1899,
             rating: 4.2,
+            id: 1,
           },
           {
             img_url: Meeting_place3,
@@ -82,6 +83,7 @@ export const DB = [
             place_name: "WestZoon Party Hall  Near HSR Layout Opp. Bus Stand",
             price: 1899,
             rating: 3.2,
+            id: 2,
           },
           {
             img_url: Open_place4,
@@ -90,6 +92,7 @@ export const DB = [
               "Red club Place Super Collection That Make Fun Double Near HSR Hall",
             price: 1399,
             rating: 4.6,
+            id: 3,
           },
           {
             img_url: Party_place3,
@@ -98,6 +101,7 @@ export const DB = [
               "reserviour Excusive Place For Family Day Out Near kormangla",
             price: 1699,
             rating: 3.5,
+            id: 4,
           },
           {
             img_url: Open_place3,
@@ -106,6 +110,7 @@ export const DB = [
               "TBC party Night King  Excusive Place To Enjoy With Friends And Family Near kormangla",
             price: 899,
             rating: 4.4,
+            id: 5,
           },
         ],
       },

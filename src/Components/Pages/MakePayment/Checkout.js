@@ -3,7 +3,11 @@ import "./CheckOut.css";
 import Address from "../../Utils/Address";
 import Input from "../../Utils/Input";
 import { Button } from "../../Utils/Button";
+import { useStateValue } from "../../Context/UseContext";
 const CheckOut = () => {
+  const [{ Add_Date_Time_Details, Card_details, WayToMakePayment }, dispatch] =
+    useStateValue();
+  console.log(Add_Date_Time_Details, Card_details);
   const handleAddForm = () => {
     document.querySelector(".add_details_form").style.display = "flex";
   };
@@ -34,57 +38,64 @@ const CheckOut = () => {
               </div>
               {/* total */}
               <div className="check_out_total_box">
-                <div>Order Summary</div>
-                <div>
+                <div className="order_summery_heading">Order Summary</div>
+                <div className="common_order_summary_filds">
                   <div>Items :</div>
                   <div> 29393</div>
                 </div>
-                <div>
+                <div className="common_order_summary_filds">
                   <div>GST :</div>
                   <div> 246</div>
                 </div>
-                <div>
+                <div className="common_order_summary_filds">
                   <div>Items :</div>
                   <div> 29393</div>
                 </div>
-                <div>
+                <div className="common_order_summary_filds">
                   <div>Promotion Applied :</div>
                   <div> -300</div>
                 </div>
-                <div>
+                <div className="Oder_summery_total">
                   <div>Order Total :</div>
                   <div> 29093</div>
                 </div>
               </div>
             </div>
             <div className="checkout_review_box">
-              <div className="PlacesViewCard">
-                <div className="place-img">
-                  <img alt="" />
-                </div>
-                <div className="placesView-details-box">
-                  <div className="placesView-placeName">
-                    <h3 className="h3"></h3>
+              {WayToMakePayment ? (
+                <div key={WayToMakePayment.id} className="PlacesViewCard">
+                  <div className="place-img">
+                    <img src={WayToMakePayment.img} />
                   </div>
-                  <div className="placeview-rating">
-                    <div className="Placeview-rating-text">
-                      <span className="rating-digit"></span>
-                      <span> (315 rating)</span>
+                  <div className="placesView-details-box">
+                    <div className="placesView-placeName">
+                      <h3 className="h3"></h3>
                     </div>
-                    <div className="placeview-rating-disc">Excellent</div>
-                  </div>
-                  <div className="placeview-price">
-                    <div className="placeview-rupe">₹ /hr</div>
-                    <div className="placeview-btns">
-                      <Button className="common-btn" btn_name="View Details" />
-                      <Button
-                        className="common-btn placesView-BookNow"
-                        btn_name="Book Now"
-                      />
+                    <div className="placeview-rating">
+                      <div className="Placeview-rating-text">
+                        <span className="rating-digit"></span>
+                        <span> (315 rating)</span>
+                      </div>
+                      <div className="placeview-rating-disc">Excellent</div>
+                    </div>
+                    <div className="placeview-price">
+                      <div className="placeview-rupe">₹ /hr</div>
+                      <div className="placeview-btns">
+                        <Button
+                          className="common-btn"
+                          btn_name="View Details"
+                        />
+                        <Button
+                          className="common-btn placesView-BookNow"
+                          btn_name="Book Now"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                <div style={{ color: "black", fontSize: "40px" }}>Nothing</div>
+              )}
             </div>
           </div>
           <Addres_details onclickClose={handleAddFormClose} />

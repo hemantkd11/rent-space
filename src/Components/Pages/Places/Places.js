@@ -8,7 +8,7 @@ const Places = () => {
     <div className=" App-page-container ">
       <div className=" App-page-Inner-container">
         <div className="App-page-wrapper ">
-          <SlotBox SlotHeader="Hello" />
+          <SlotBox SlotHeader="Your Ideal Place Awaits" />
           <Banner
             className1="Banner-container"
             className2="banner-wrapper"

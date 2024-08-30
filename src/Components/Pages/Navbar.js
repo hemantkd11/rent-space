@@ -54,7 +54,7 @@ const NavlistScreen1000 = [
   {
     name: "Home",
     className: "hideonMobile",
-    link: "/Home",
+    link: "/",
     id: 2,
   },
   {
@@ -81,12 +81,18 @@ const NavlistScreen1000 = [
     link: "/PlacesView",
     id: 6,
   },
+  {
+    name: "Savelist",
+    className: "hideonMobile",
+    link: "/savedlist",
+    id: 7,
+  },
 
   {
     name: <Menu />,
     className: "hideonlaptop",
     link: "/#",
-    id: 5,
+    id: 8,
   },
 ];
 

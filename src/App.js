@@ -8,19 +8,21 @@ import Places from "./Components/Pages/Places/Places";
 import { PlacesView } from "./Components/Pages/PlacesView/Placesview";
 import { useStateValue } from "./Components/Context/UseContext";
 import CheckOut from "./Components/Pages/MakePayment/Checkout";
+import SaveList from "./Components/Pages/SaveList";
 
 function App() {
-  const [{ Add_Date_Time_Details }] = useStateValue();
-  console.log(Add_Date_Time_Details);
+  const [{ Add_Date_Time_Details, Card_details }] = useStateValue();
+  console.log(Add_Date_Time_Details, Card_details);
 
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/rent" element={<Home />} />
         <Route path="/Places" element={<Places />} />
         <Route path="/PlacesView" element={<PlacesView />} />
         <Route path="/checkout" element={<CheckOut />} />
+        <Route path="/savedlist" element={<SaveList />} />
       </Routes>
     </Router>
     // <>
