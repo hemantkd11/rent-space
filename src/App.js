@@ -1,6 +1,6 @@
 // import logo from "./logo.svg";
 import "./App.css";
-import { HashRouter as Router, Routes, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Pages/Navbar";
 // import DemoNavbar from "./Components/Pages/DemoNavbar";
 import Home from "./Components/Pages/Home";
@@ -17,13 +17,13 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Switch>
-        <Route path="/" element={<Home />} />
+      <Routes>
+        <Route path="/rent" element={<Home />} />
         <Route path="/Places" element={<Places />} />
         <Route path="/PlacesView" element={<PlacesView />} />
         <Route path="/checkout" element={<CheckOut />} />
         <Route path="/savedlist" element={<SaveList />} />
-      </Switch>
+      </Routes>
     </Router>
     // <>
     //   <Navbar />
