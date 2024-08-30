@@ -74,7 +74,7 @@ const CheckOut = () => {
                     <div className="placeview-rating">
                       <div className="Placeview-rating-text">
                         <span className="rating-digit"></span>
-                        <span> (315 ratings)</span>
+                        <span> (315 rating)</span>
                       </div>
                       <div className="placeview-rating-disc">Excellent</div>
                     </div>
