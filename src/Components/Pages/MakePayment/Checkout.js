@@ -79,7 +79,7 @@ const CheckOut = () => {
                       <div className="placeview-rating-disc">Excellent</div>
                     </div>
                     <div className="placeview-price">
-                      <div className="placeview-rupe">₹2222 /hr</div>
+                      <div className="placeview-rupe">₹2211 /hr</div>
                       <div className="placeview-btns">
                         <Button
                           className="common-btn"
