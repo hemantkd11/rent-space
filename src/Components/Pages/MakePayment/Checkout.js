@@ -65,7 +65,7 @@ const CheckOut = () => {
               {WayToMakePayment ? (
                 <div key={WayToMakePayment.id} className="PlacesViewCard">
                   <div className="place-img">
-                    <img src={WayToMakePayment.img} />
+                    <img src={WayToMakePayment.img} alt="hh" />
                   </div>
                   <div className="placesView-details-box">
                     <div className="placesView-placeName">
