@@ -49,7 +49,7 @@ const ClodeMenu = () => {
   );
 };
 const NavlistScreen1000 = [
-  { name: <Logo />, className: "logo", id: 1, link: "/Home" },
+  { name: <Logo />, className: "logo", id: 1, link: "/" },
 
   {
     name: "Home",
@@ -100,7 +100,7 @@ const Mobileview = [
   {
     name: <ClodeMenu />,
     // className: "Menu-btn",
-    link: "/Home",
+    link: "/",
     id: 5,
   },
 
