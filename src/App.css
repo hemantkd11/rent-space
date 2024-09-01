@@ -105,11 +105,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 70px;
-  margin-bottom: 20px;
+  margin-top: 50px;
+  /* margin-bottom: 20px; */
 }
 .home-css {
-  height: 95vh;
+  height: 96vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -135,7 +135,7 @@ body {
   gap: 10vh;
 }
 .home-css-wrapper {
-  height: 95vh;
+  height: auto;
 }
 .Home-page-heading {
   /* background-color: rgba(0, 0, 0, 0.5); */
@@ -479,6 +479,20 @@ body {
   width: 30px;
   outline: none;
   border: none;
+}
+.help_text_page {
+  width: var(--w100);
+  display: flex;
+  border-top: 1px solid rgb(124, 124, 124);
+  padding: 10px 0px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.help_text_wrapper {
+  max-width: 1000px;
+  display: var(--displayFlex);
+  flex-direction: column;
+  gap: 20px;
+  line-height: auto;
 }
 @media (min-width: 600px) {
   .cards {

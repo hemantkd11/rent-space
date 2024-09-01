@@ -209,3 +209,6 @@ label {
   margin-top: 10px;
   border-top: 1px solid var(--app-theme);
 }
+.checkout_placeCard {
+  padding: 10px 0px;
+}

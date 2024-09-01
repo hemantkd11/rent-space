@@ -9,15 +9,10 @@ export const PlacesView = () => {
   const Navigate = useNavigate();
   const [{ Add_Date_Time_Details, Card_details, WayToMakePayment }, dispatch] =
     useStateValue();
-  if (!Add_Date_Time_Details) {
-    console.error("Add_data_time is undefined");
-  } else {
-    console.log(Add_Date_Time_Details);
-    console.log("Card_details", Card_details);
-    console.log("WayToMakePayment", WayToMakePayment);
-  }
+
   //   console.log("Add_Date_Time_Details", Add_Date_Time_Details);
   const location = useLocation();
+  const { search, dateTimeIn, dateTimeOut } = location.state || {};
   const [filterDb, setFilterDb] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 4;
@@ -28,7 +23,6 @@ export const PlacesView = () => {
   const currentCards = filterDb.slice(indexOfFirstCard, indexOfLastCard);
 
   // filter data
-  const { search, dateTimeIn, dateTimeOut } = location.state || {};
 
   // Handle page change
   const handlePageChange = (pageNumber) => {
@@ -56,6 +50,24 @@ export const PlacesView = () => {
     Navigate("/savedlist");
   };
   const HandleBooking = (id, img, place, rating, price) => {
+    const hourlyRate = price; // Rate per hour
+    console.log("filterDb price", price);
+
+    // Convert the date strings to Date objects
+    const startDate = new Date(dateTimeIn);
+    const endDate = new Date(dateTimeOut);
+
+    // Calculate the difference in milliseconds
+    const differenceInMs = endDate - startDate;
+
+    // Convert milliseconds to hours
+    const differenceInHours = differenceInMs / (1000 * 60 * 60);
+
+    // Calculate the total amount
+    const totalAmount = differenceInHours * hourlyRate;
+
+    console.log(`Total amount to pay: ₹${totalAmount.toFixed(2)}`);
+
     const Add_Time = {
       dateTimeIn,
       dateTimeOut,
@@ -63,8 +75,9 @@ export const PlacesView = () => {
       img,
       place,
       rating,
-      price,
+      totalAmount,
     };
+
     // localStorage.clear();
     dispatch({
       type: "WayToBook",

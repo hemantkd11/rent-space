@@ -4,6 +4,8 @@ export const initialState = {
     JSON.parse(localStorage.getItem("Add_Date_Time_Details")) || null,
   Card_details: JSON.parse(localStorage.getItem("Card_details")) || [],
   WayToMakePayment: JSON.parse(localStorage.getItem("WayToMakePayment")) || [],
+  My_Booking_details:
+    JSON.parse(localStorage.getItem("My_Booking_details")) || [],
 };
 
 export const reducer = (state = initialState, action) => {
@@ -43,6 +45,14 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         WayToMakePayment: Make_Payment,
+      };
+    case "My_Booking_page":
+      const My_Booking = [...state.My_Booking_details, action.items];
+      console.log("My_Booking_details", My_Booking);
+      localStorage.setItem("My_Booking_details", JSON.stringify(My_Booking));
+      return {
+        ...state,
+        My_Booking_details: My_Booking,
       };
     default:
       return state;

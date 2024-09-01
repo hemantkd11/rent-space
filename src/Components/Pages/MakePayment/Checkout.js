@@ -4,16 +4,51 @@ import Address from "../../Utils/Address";
 import Input from "../../Utils/Input";
 import { Button } from "../../Utils/Button";
 import { useStateValue } from "../../Context/UseContext";
+import { HelpCom } from "../../Utils/Helpcom";
+import { useNavigate } from "react-router-dom";
 const CheckOut = () => {
+  const Navigate = useNavigate();
   const [{ Add_Date_Time_Details, Card_details, WayToMakePayment }, dispatch] =
     useStateValue();
-  console.log(Add_Date_Time_Details, Card_details);
+  console.log("WayToMakePayment", WayToMakePayment);
   const handleAddForm = () => {
     document.querySelector(".add_details_form").style.display = "flex";
   };
   const handleAddFormClose = () => {
     document.querySelector(".add_details_form").style.display = "none";
   };
+
+  const HandleConfirmBooking = (
+    dateTimeIn,
+    dateTimeOut,
+    img,
+    place,
+    rating,
+    totalAmount
+  ) => {
+    let bookingIdCounter = Math.floor(Math.random() * 1000);
+    const newBookingId = `booking-${Date.now()}-${bookingIdCounter}`;
+
+    // Your logic to handle the booking confirmation
+    console.log("Booking Confirmed with ID:", newBookingId);
+    const Add_Time = {
+      dateTimeIn,
+      dateTimeOut,
+
+      img,
+      place,
+      rating,
+      totalAmount,
+      newBookingId,
+    };
+
+    dispatch({
+      type: "My_Booking_page",
+      items: Add_Time,
+    });
+    Navigate("/mybookings");
+  };
+
   return (
     <div className=" App-page-container ">
       <div className=" App-page-Inner-container">
@@ -63,7 +98,10 @@ const CheckOut = () => {
             </div>
             <div className="checkout_review_box">
               {WayToMakePayment ? (
-                <div key={WayToMakePayment.id} className="PlacesViewCard">
+                <div
+                  key={WayToMakePayment.id}
+                  className="PlacesViewCard checkout_placeCard"
+                >
                   <div className="place-img">
                     <img src={WayToMakePayment.img} alt="hh" />
                   </div>
@@ -79,7 +117,9 @@ const CheckOut = () => {
                       <div className="placeview-rating-disc">Excellent</div>
                     </div>
                     <div className="placeview-price">
-                      <div className="placeview-rupe">₹2211 /hr</div>
+                      <div className="placeview-rupe">
+                        ₹{WayToMakePayment.totalAmount}
+                      </div>
                       <div className="placeview-btns">
                         <Button
                           className="common-btn"
@@ -87,15 +127,29 @@ const CheckOut = () => {
                         />
                         <Button
                           className="common-btn placesView-BookNow"
-                          btn_name="Book Now"
+                          btn_name="Confirm Booking"
+                          onClick={() =>
+                            HandleConfirmBooking(
+                              WayToMakePayment.dateTimeIn,
+                              WayToMakePayment.dateTimeOut,
+
+                              WayToMakePayment.img,
+                              WayToMakePayment.place_name,
+                              WayToMakePayment.rating,
+                              WayToMakePayment.totalAmount
+                            )
+                          }
                         />
                       </div>
                     </div>
                   </div>
                 </div>
               ) : (
-                <div style={{ color: "black", fontSize: "40px" }}>Nothing</div>
+                <div style={{ color: "black", fontSize: "40px" }}>
+                  Please select your place first
+                </div>
               )}
+              <HelpCom />
             </div>
           </div>
           <Addres_details onclickClose={handleAddFormClose} />
