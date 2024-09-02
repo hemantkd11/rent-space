@@ -162,7 +162,7 @@ const Navbar = () => {
             {Mobileview ? (
               Mobileview.map((item) => (
                 <li key={item.id}>
-                  <Link key={item.id} href={item.link}>
+                  <Link key={item.id} to={item.link}>
                     {item.name}
                   </Link>
                 </li>
