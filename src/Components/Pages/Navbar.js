@@ -91,7 +91,7 @@ const NavlistScreen1000 = [
   {
     name: <Menu />,
     className: "hideonlaptop",
-    link: "/#",
+    link: "#",
     id: 8,
   },
 ];
@@ -100,7 +100,6 @@ const Mobileview = [
   {
     name: <ClodeMenu />,
     // className: "Menu-btn",
-    link: "/",
     id: 5,
   },
 

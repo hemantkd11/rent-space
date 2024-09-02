@@ -456,7 +456,7 @@ body {
 .placeview-price {
   display: flex;
   justify-content: space-between;
-  font-size: 30px;
+  font-size: 22px;
 }
 .placeview-btns {
   display: flex;
@@ -465,7 +465,7 @@ body {
   gap: 10px;
 }
 .common-btn {
-  font-size: 25px;
+  font-size: 16px;
   padding: 8px 10px;
   font-weight: 700;
   background-color: white;
@@ -494,30 +494,38 @@ body {
   gap: 20px;
   line-height: auto;
 }
-@media (min-width: 600px) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
+
+/* .placesView-placeName{
+  
+}  */
+
+@media (max-width: 1400px) {
+  .PlacesViewCard {
+    width: var(--w100);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-}
-@media (max-width: 700px) {
-  .place-img {
-    width: auto;
-    height: 250px;
-  }
-  .common-btn {
-    font-size: 15px;
-  }
-  .placesView-BookNow {
-    font-size: 15px;
+  .placesView-details-box {
+    padding: 20px;
+    width: var(--w100);
+    gap: 20px;
+    height: auto;
   }
   .placesView-placeName .h3 {
+    font-size: 2vw;
+  }
+  .placeview-price {
+    font-size: 30px;
+  }
+  .common-btn {
     font-size: 20px;
   }
-  .Nav-container .Nav-limit-container {
-    width: var(--w100);
-  }
-  .right-banner-wrapper {
-    height: 28vw;
+}
+@media (max-width: 1100px) {
+  .common-btn {
+    font-size: 13px;
   }
 }
 @media (max-width: 900px) {
@@ -551,22 +559,43 @@ body {
     font-size: var(--font-text-input);
   }
 }
-@media (max-width: 1200px) {
-  .PlacesViewCard {
-    width: var(--w100);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+@media (max-width: 700px) {
+  .place-img {
+    width: auto;
+    height: 170px;
   }
-  .placesView-details-box {
-    padding: 20px;
+  .common-btn {
+    font-size: 10px;
+  }
+  .placesView-BookNow {
+    font-size: 10px;
+  }
+  .placesView-placeName .h3 {
+    font-size: 20px;
+  }
+  .Nav-container .Nav-limit-container {
     width: var(--w100);
-    gap: 20px;
-    height: auto;
+  }
+  .help_text_wrapper {
+    font-size: 12px;
+  }
+  .right-banner-wrapper {
+    height: 28vw;
+  }
+  .placeview-price {
+    flex-direction: var(--flex-directcol);
+    gap: 10px;
+    font-size: 15px;
+  }
+  .common-btn {
+    font-size: 8px;
   }
 }
-
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 .pagination {
   display: flex;
   justify-content: center;
