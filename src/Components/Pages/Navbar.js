@@ -105,27 +105,39 @@ const Mobileview = [
 
   {
     name: "Home",
-    // className: "nav-home",
-    link: "/#",
+    className: "hideonMobile",
+    link: "/",
     id: 2,
   },
   {
     name: "Place",
-    // className: "nav-places",
+    className: "hideonMobile",
     link: "/Places",
     id: 3,
   },
   {
     name: "Contact",
-    // className: "nav-contact",
+    className: "hideonMobile",
     link: "/#",
     id: 4,
   },
   {
-    name: "PlacesView",
-    // className: "nav-contact",
+    name: "CheckOut",
+    className: "hideonMobile",
+    link: "/checkout",
+    id: 5,
+  },
+  {
+    name: "PlaceView",
+    className: "hideonMobile",
     link: "/PlacesView",
-    id: 4,
+    id: 6,
+  },
+  {
+    name: "Savelist",
+    className: "hideonMobile",
+    link: "/savedlist",
+    id: 7,
   },
 ];
 const Navbar = () => {
