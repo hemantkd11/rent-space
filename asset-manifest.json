@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/rent-space/static/css/main.6d16b120.css",
-    "main.js": "/rent-space/static/js/main.3b6d0429.js",
+    "main.js": "/rent-space/static/js/main.f43d67b6.js",
     "static/js/453.18e8072a.chunk.js": "/rent-space/static/js/453.18e8072a.chunk.js",
     "static/media/on_space_place1.jpg": "/rent-space/static/media/on_space_place1.a5cc0cab96eebfe0a04a.jpg",
     "static/media/personalplace1.jpg": "/rent-space/static/media/personalplace1.ea8b20b6abc4c923a394.jpg",
@@ -29,11 +29,11 @@
     "static/media/party_place7.jpg": "/rent-space/static/media/party_place7.83e7df517ba4ce3fee1b.jpg",
     "index.html": "/rent-space/index.html",
     "main.6d16b120.css.map": "/rent-space/static/css/main.6d16b120.css.map",
-    "main.3b6d0429.js.map": "/rent-space/static/js/main.3b6d0429.js.map",
+    "main.f43d67b6.js.map": "/rent-space/static/js/main.f43d67b6.js.map",
     "453.18e8072a.chunk.js.map": "/rent-space/static/js/453.18e8072a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6d16b120.css",
-    "static/js/main.3b6d0429.js"
+    "static/js/main.f43d67b6.js"
   ]
 }
