@@ -75,24 +75,27 @@ const CheckOut = () => {
               <div className="check_out_total_box">
                 <div className="order_summery_heading">Order Summary</div>
                 <div className="common_order_summary_filds">
-                  <div>Items :</div>
+                  <div className="price-cut">Items :</div>
                   <div> 29393</div>
                 </div>
                 <div className="common_order_summary_filds">
-                  <div>GST :</div>
+                  <div className="price-cut">GST :</div>
                   <div> 246</div>
                 </div>
                 <div className="common_order_summary_filds">
-                  <div>Items :</div>
+                  <div className="price-cut">Items :</div>
                   <div> 29393</div>
                 </div>
                 <div className="common_order_summary_filds">
-                  <div>Promotion Applied :</div>
+                  <div className="price-cut">Promotion Applied :</div>
                   <div> -300</div>
                 </div>
                 <div className="Oder_summery_total">
-                  <div>Order Total :</div>
-                  <div> 29093</div>
+                  <div className="price-cut">Order Total :</div>
+                  <div className="price-cut"> 29093</div>
+                </div>
+                <div className="Oder_summery_total checkout_confirm_btn">
+                  <Button btn_name="Confirm Booking" />
                 </div>
               </div>
             </div>
@@ -107,11 +110,13 @@ const CheckOut = () => {
                   </div>
                   <div className="placesView-details-box">
                     <div className="placesView-placeName">
-                      <h3 className="h3"></h3>
+                      <h3 className="h3">{WayToMakePayment.place}</h3>
                     </div>
                     <div className="placeview-rating">
                       <div className="Placeview-rating-text">
-                        <span className="rating-digit"></span>
+                        <span className="rating-digit">
+                          {WayToMakePayment.rating}
+                        </span>
                         <span> (315 ratings)</span>
                       </div>
                       <div className="placeview-rating-disc">Excellent</div>

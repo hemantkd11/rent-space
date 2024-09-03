@@ -436,6 +436,7 @@ body {
   justify-content: center;
   gap: 10px;
   box-sizing: border-box;
+  padding: 10px 0px;
 }
 .place-img {
   width: 700px;

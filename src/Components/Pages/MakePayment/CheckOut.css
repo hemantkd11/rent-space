@@ -60,7 +60,7 @@
   width: 40%;
   border-radius: 12px;
   box-shadow: 0px 0px 4px rgb(75, 75, 75);
-  height: 300px;
+  height: auto;
   margin-left: 30px;
   padding: 20px;
 }
@@ -103,6 +103,8 @@
   font-size: 15px;
   border-bottom: 1px solid transparent;
   padding: 2px;
+  color: rgb(224, 211, 24);
+  font-weight: 500;
 }
 .add_address_btn:hover {
   color: #ffae00;
@@ -166,6 +168,7 @@
 .common_class_form {
   display: var(--displayFlex);
   gap: 10px;
+  width: var(--w100);
 }
 label {
   display: flex;
@@ -211,4 +214,41 @@ label {
 }
 .checkout_placeCard {
   padding: 10px 0px;
+}
+.checkout_confirm_btn {
+  display: flex;
+  width: var(--w100);
+  align-items: center;
+  justify-content: center;
+}
+.checkout_confirm_btn button {
+  padding: 10px 20px;
+  background-color: #1ab64f;
+  color: white;
+  font-size: 15px;
+  border-radius: 7px;
+  border: none;
+}
+.price-cut {
+  font-weight: 600;
+}
+@media (max-width: 900px) {
+  .Address_wrapper {
+    width: var(--w90);
+  }
+  label {
+    font-size: 10px;
+  }
+  .check_out_content_box {
+    display: flex;
+    flex-direction: var(--flex-directcol);
+    gap: 20px;
+  }
+  .address_and_item_review {
+    width: var(--w100);
+  }
+  .check_out_total_box {
+    width: var(--w100);
+    margin-left: 0;
+  }
 }
