@@ -3,6 +3,7 @@ import SlotBox from "./SlotDateTime";
 import { Banner } from "../../Utils/Banner";
 import Mobile from "../../../Image/cashback_offer_2400.png";
 import { Button } from "../../Utils/Button";
+import { HelpCom } from "../../Utils/Helpcom";
 const Places = () => {
   return (
     <div className=" App-page-container ">
@@ -38,6 +39,7 @@ const Places = () => {
               <Button btn_name="Book Now" className="banner-btn" />
             </div>
           </Banner>
+          <HelpCom />
         </div>
       </div>
     </div>

@@ -53,24 +53,34 @@ const SlotBox = ({ SlotHeader }) => {
 
         <div className="slot-input-from-too">
           <div className="slot-input-from-too-wrapper">
-            <Input
-              className="slot-date-time-from"
-              type="datetime-local"
-              placeholder="select checkIn date and time"
-              onchange={(e) => setDateTimeIn(e.target.value)}
-            />
-            <Input
-              className="slot-date-time-too"
-              type="datetime-local"
-              placeholder="select checkOut date and time"
-              onchange={(e) => setDateTimeOut(e.target.value)}
-            />
+            <div className="datefrom checkin-date-slot">
+              Select date for checkin
+              <Input
+                className="slot-date-time-from"
+                type="datetime-local"
+                placeholder={
+                  dateTimeIn === ""
+                    ? "Please select a check-in date and time"
+                    : "hhe"
+                }
+                onchange={(e) => setDateTimeIn(e.target.value)}
+              />
+            </div>
+            <div className="datefrom checkout-date-slot ">
+              Select date for checkout
+              <Input
+                className="slot-date-time-too"
+                type="datetime-local"
+                placeholder="select checkOut date and time"
+                onchange={(e) => setDateTimeOut(e.target.value)}
+              />
+            </div>
           </div>
         </div>
       </div>
       <div className="search-date-time-submit-btn">
         <button className="slot-search-btn" onClick={handleSearch}>
-          submit
+          Search places
         </button>
       </div>
     </div>

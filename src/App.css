@@ -132,7 +132,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 10vh;
+  gap: 6vh;
 }
 .home-css-wrapper {
   height: auto;
@@ -239,45 +239,61 @@ body {
   box-sizing: border-box;
 }
 .slot-date-time-from {
-  width: 50%;
+  width: 100%;
   box-sizing: border-box;
   border: none;
   outline: none;
+
   padding: var(--input-pading);
   font-size: var(--font-text);
+}
+.checkin-date-slot {
   border-left: 1px solid rgb(92, 90, 90);
 }
 
-.slot-date-time-too {
+.datefrom {
   width: 50%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+.checkout-date-slot {
+  border-left: 1px solid rgb(92, 90, 90);
+}
+.slot-date-time-too {
+  width: 100%;
   border: none;
   box-sizing: border-box;
   outline: none;
   padding: var(--input-pading);
   font-size: var(--font-text);
-
-  border-left: 1px solid rgb(92, 90, 90);
 }
 .slot-heading {
   display: flex;
   font-size: 20px;
   font-weight: 600;
 }
+.default-text {
+  color: #999;
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+}
 .search-date-time-submit-btn {
   width: var(--w100);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 0px 40px 0px;
+  padding: 20px 0px 10px 0px;
 }
 .slot-search-btn {
-  padding: 10px 40px;
-  font-size: var(--font-text);
+  padding: 15px 60px;
+  /* font-size: var(--font-text); */
+  font-size: 15px;
   border-radius: 5px;
   background-color: #f2ff00;
   border: none;
-  position: absolute;
-  top: 75%;
+  /* position: absolute; */
+  /* top: 75%; */
 }
 .cards {
   max-width: 1200px;
@@ -367,7 +383,7 @@ body {
 .Banner2-wrapper {
   background-image: url(./Image/Banner2-theme.jpg);
   width: var(--w100);
-  height: 150px;
+  height: 100px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -555,6 +571,9 @@ body {
     border: none;
     font-size: var(--font-text-input);
   }
+  .checkin-date-slot {
+    border: none;
+  }
   .slot-date-time-too {
     font-size: var(--font-text-input);
   }
@@ -563,6 +582,9 @@ body {
   .place-img {
     width: 100%;
     height: 170px;
+  }
+  .App-page-Inner-container {
+    width: 95%;
   }
   .common-btn {
     font-size: 10px;
