@@ -1,7 +1,99 @@
+// import React, { useState } from "react";
+// import Input from "../../Utils/Input";
+// import { useNavigate } from "react-router-dom";
+// import { useStateValue } from "../../Context/UseContext";
+// const SlotBox = ({ SlotHeader }) => {
+//   const navigate = useNavigate();
+//   const [search, setSearch] = useState("");
+//   const [dateTimeIn, setDateTimeIn] = useState("");
+//   const [dateTimeOut, setDateTimeOut] = useState("");
+//   const [{ Add_Date_Time_Details }, dispatch] = useStateValue();
+
+//   const DD = () => {
+//     const Add_Time = {
+//       dateTimeIn,
+//       dateTimeOut,
+//     };
+//     localStorage.clear();
+//     dispatch({
+//       type: "Add_Timing_Details",
+//       items: Add_Time,
+//     });
+//     localStorage.setItem("Add_Date_Time_Details", JSON.stringify(Add_Time));
+//   };
+//   const handleSearch = () => {
+//     // Navigate with search parameters
+
+//     if (search == "" && dateTimeIn == "" && dateTimeOut == "") {
+//       alert("Fill all the fileds**");
+//     } else {
+//       navigate("/placesView", {
+//         state: {
+//           search,
+//           dateTimeIn,
+//           dateTimeOut,
+//         },
+//       });
+//       DD();
+//     }
+//   };
+
+//   return (
+//     <div className="slot-input-box">
+//       <div className="slot-heading">{SlotHeader}</div>
+//       <div className="slot-input-search-date-time">
+//         <div className="slot-search-input-box">
+//           <Input
+//             type="search"
+//             className="slot-input-search"
+//             placeholder="Search Place"
+//             onchange={(e) => setSearch(e.target.value)}
+//           />
+//         </div>
+
+//         <div className="slot-input-from-too">
+//           <div className="slot-input-from-too-wrapper">
+//             <div className="datefrom checkin-date-slot">
+//               Select date for checkin
+//               <Input
+//                 className="slot-date-time-from"
+//                 type="datetime-local"
+//                 placeholder={
+//                   dateTimeIn === ""
+//                     ? "Please select a check-in date and time"
+//                     : "hhe"
+//                 }
+//                 onchange={(e) => setDateTimeIn(e.target.value)}
+//               />
+//             </div>
+//             <div className="datefrom checkout-date-slot ">
+//               Select date for checkout
+//               <Input
+//                 className="slot-date-time-too"
+//                 type="datetime-local"
+//                 placeholder="select checkOut date and time"
+//                 onchange={(e) => setDateTimeOut(e.target.value)}
+//               />
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//       <div className="search-date-time-submit-btn">
+//         <button className="slot-search-btn" onClick={handleSearch}>
+//           Search places
+//         </button>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default SlotBox;
+
 import React, { useState } from "react";
 import Input from "../../Utils/Input";
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../../Context/UseContext";
+
 const SlotBox = ({ SlotHeader }) => {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
@@ -13,6 +105,7 @@ const SlotBox = ({ SlotHeader }) => {
     const Add_Time = {
       dateTimeIn,
       dateTimeOut,
+      search,
     };
     localStorage.clear();
     dispatch({
@@ -21,11 +114,12 @@ const SlotBox = ({ SlotHeader }) => {
     });
     localStorage.setItem("Add_Date_Time_Details", JSON.stringify(Add_Time));
   };
+
   const handleSearch = () => {
     // Navigate with search parameters
 
     if (search == "" && dateTimeIn == "" && dateTimeOut == "") {
-      alert("pleace enter date and time **");
+      alert("Fill all the fileds**");
     } else {
       navigate("/placesView", {
         state: {
@@ -37,12 +131,24 @@ const SlotBox = ({ SlotHeader }) => {
       DD();
     }
   };
-
+  // const handleSearch = () => {
+  //   if (search == ""  dateTimeIn == "" && dateTimeOut == "") {
+  //     alert("Fill all the fileds**");
+  //   } else {
+  //     navigate("/placesView", {
+  //       state: {
+  //         search,
+  //         dateTimeIn,
+  //         dateTimeOut,
+  //       },
+  //     });
+  //     DD();
+  //   }
+  // };
   return (
     <div className="slot-input-box">
-      <div className="slot-heading">{SlotHeader}</div>
       <div className="slot-input-search-date-time">
-        <div className="slot-search-input-box">
+        <div className="slot-input-item">
           <Input
             type="search"
             className="slot-input-search"
@@ -50,38 +156,27 @@ const SlotBox = ({ SlotHeader }) => {
             onchange={(e) => setSearch(e.target.value)}
           />
         </div>
-
-        <div className="slot-input-from-too">
-          <div className="slot-input-from-too-wrapper">
-            <div className="datefrom checkin-date-slot">
-              Select date for checkin
-              <Input
-                className="slot-date-time-from"
-                type="datetime-local"
-                placeholder={
-                  dateTimeIn === ""
-                    ? "Please select a check-in date and time"
-                    : "hhe"
-                }
-                onchange={(e) => setDateTimeIn(e.target.value)}
-              />
-            </div>
-            <div className="datefrom checkout-date-slot ">
-              Select date for checkout
-              <Input
-                className="slot-date-time-too"
-                type="datetime-local"
-                placeholder="select checkOut date and time"
-                onchange={(e) => setDateTimeOut(e.target.value)}
-              />
-            </div>
-          </div>
+        <div className="slot-input-item">
+          <Input
+            type="datetime-local"
+            className="slot-date-time"
+            placeholder="Check in"
+            onchange={(e) => setDateTimeIn(e.target.value)}
+          />
         </div>
-      </div>
-      <div className="search-date-time-submit-btn">
-        <button className="slot-search-btn" onClick={handleSearch}>
-          Search places
-        </button>
+        <div className="slot-input-item">
+          <Input
+            type="datetime-local"
+            className="slot-date-time"
+            placeholder="Check out"
+            onchange={(e) => setDateTimeOut(e.target.value)}
+          />
+        </div>
+        <div className="slot-input-item">
+          <button className="slot-search-btn" onClick={handleSearch}>
+            Search
+          </button>
+        </div>
       </div>
     </div>
   );

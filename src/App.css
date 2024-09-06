@@ -642,3 +642,89 @@ body {
   cursor: not-allowed;
   opacity: 0.5;
 }
+
+/* slopt demo css */
+/* General layout */
+.slot-input-box {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slot-input-search-date-time {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 90%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  padding: 10px;
+}
+
+.slot-input-item {
+  flex: 1;
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.slot-input-search,
+.slot-date-time {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+}
+
+.slot-search-btn {
+  background-color: #ff385c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* Responsive design using media queries */
+@media (max-width: 768px) {
+  .slot-input-search-date-time {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .slot-input-item {
+    margin: 5px 0;
+  }
+
+  .slot-search-btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .slot-input-box {
+    width: 95%;
+  }
+
+  .slot-input-search-date-time {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1025px) {
+  .slot-input-box {
+    width: 100%;
+  }
+
+  .slot-input-search-date-time {
+    width: 98%;
+  }
+}
+
+/* slot demo css end */
