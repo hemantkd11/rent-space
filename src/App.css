@@ -651,6 +651,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* box-shadow: 0px 0px 4px black; */
 }
 
 .slot-input-search-date-time {
@@ -659,8 +660,8 @@ body {
   align-items: center;
   width: 90%;
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 50px;
+  box-shadow: 0px 0px 10px rgb(155, 155, 155);
+  border-radius: 20px;
   padding: 10px;
 }
 
@@ -669,6 +670,8 @@ body {
   margin: 0 10px;
   display: flex;
   flex-direction: column;
+  width: var(--w90);
+  border: none;
 }
 
 .slot-input-search,
@@ -711,9 +714,10 @@ body {
   }
 
   .slot-input-search-date-time {
-    width: 80%;
+    width: 90%;
     display: flex;
     flex-direction: column;
+    gap: 10px;
   }
 }
 
