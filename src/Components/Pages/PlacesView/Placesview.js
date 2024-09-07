@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../Utils/Button";
 import { useStateValue } from "../../Context/UseContext";
+import { HelpCom } from "../../Utils/Helpcom";
 export const PlacesView = () => {
   const Navigate = useNavigate();
   const [{ Add_Date_Time_Details, Card_details, WayToMakePayment }, dispatch] =
@@ -198,6 +199,7 @@ export const PlacesView = () => {
               Next
             </button>
           </div>
+          <HelpCom />
         </div>
       </div>
     </div>
