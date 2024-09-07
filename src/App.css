@@ -483,7 +483,7 @@ body {
 }
 .common-btn {
   font-size: 16px;
-  padding: 8px 10px;
+  padding: 12px 19px;
   font-weight: 700;
   background-color: white;
   border-radius: 5px;
@@ -493,9 +493,17 @@ body {
   color: white;
 }
 .Save_Items_btn {
-  width: 30px;
+  width: 26px;
+
   outline: none;
   border: none;
+
+  /* align-items: center; */
+  /* display: flex; */
+}
+.Save_Items_btn svg {
+  /* height: 40px; */
+  object-fit: contain;
 }
 .help_text_page {
   width: var(--w100);
@@ -611,7 +619,8 @@ body {
     font-size: 15px;
   }
   .common-btn {
-    font-size: 8px;
+    font-size: 16px;
+    padding: 12px 22px;
   }
 }
 @media (min-width: 600px) {
@@ -697,6 +706,9 @@ body {
   .slot-input-search-date-time {
     flex-direction: column;
     align-items: stretch;
+    justify-content: center;
+    display: flex;
+    align-items: center;
   }
 
   .slot-input-item {
