@@ -602,7 +602,7 @@ body {
     font-size: 10px;
   }
   .placesView-placeName .h3 {
-    font-size: 20px;
+    font-size: 12px;
   }
   .Nav-container .Nav-limit-container {
     width: var(--w100);
@@ -619,7 +619,7 @@ body {
     font-size: 15px;
   }
   .common-btn {
-    font-size: 16px;
+    font-size: 13px;
     padding: 12px 22px;
   }
 }
