@@ -98,7 +98,14 @@ body {
   justify-content: center;
   color: beige;
 }
-
+.logo {
+  color: red;
+  font-size: 20px;
+  font-weight: 900;
+}
+.logo a .span-onspace {
+  color: red;
+}
 /* Home page css start */
 .App-page-container {
   width: var(--w100);

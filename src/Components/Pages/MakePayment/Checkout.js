@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CheckOut.css";
 import Address from "../../Utils/Address";
 import Input from "../../Utils/Input";
@@ -8,14 +8,39 @@ import { HelpCom } from "../../Utils/Helpcom";
 import { useNavigate } from "react-router-dom";
 const CheckOut = () => {
   const Navigate = useNavigate();
+  const [addressDetails, setAddressDetails] = useState({
+    Name: "",
+    Flat: "",
+    Area: "",
+    Town: "",
+    Phone: "",
+    AreaPincode: "",
+    State: "",
+    Landmark: "",
+  });
+  console.log(addressDetails);
+  const handleAddFormClose = () => {
+    document.querySelector(".add_details_form").style.display = "none";
+  };
+
+  const handleFormdetails = (newAddress) => {
+    // Update the address details state
+    setAddressDetails(newAddress);
+    console.log(newAddress);
+    localStorage.setItem("addressDetails", JSON.stringify(newAddress));
+
+    handleAddFormClose();
+  };
+
+  const saveAddress = JSON.parse(localStorage.getItem("addressDetails"));
+  console.log("saveAddress", saveAddress);
+
   const [{ Add_Date_Time_Details, Card_details, WayToMakePayment }, dispatch] =
     useStateValue();
   console.log("WayToMakePayment", WayToMakePayment);
+
   const handleAddForm = () => {
     document.querySelector(".add_details_form").style.display = "flex";
-  };
-  const handleAddFormClose = () => {
-    document.querySelector(".add_details_form").style.display = "none";
   };
 
   const HandleConfirmBooking = (
@@ -34,7 +59,6 @@ const CheckOut = () => {
     const Add_Time = {
       dateTimeIn,
       dateTimeOut,
-
       img,
       place,
       rating,
@@ -68,6 +92,18 @@ const CheckOut = () => {
                     add_new_address_btn="add_address_btn"
                     add_change_address="add_change_btn add_address_btn"
                     onClick_add_new_address={handleAddForm}
+                    name={saveAddress.Name}
+                    area={saveAddress.Area}
+                    flat={saveAddress.Flat}
+                    town={
+                      saveAddress.Town
+                        ? saveAddress.Town +
+                          ",  " +
+                          saveAddress.State +
+                          ", " +
+                          saveAddress.AreaPincode
+                        : "Bengaluru, Karnataka 560101"
+                    }
                   />
                 </div>
               </div>
@@ -76,7 +112,7 @@ const CheckOut = () => {
                 <div className="order_summery_heading">Order Summary</div>
                 <div className="common_order_summary_filds">
                   <div className="price-cut">Items :</div>
-                  <div> 29393</div>
+                  <div> {WayToMakePayment.totalAmount}</div>
                 </div>
                 <div className="common_order_summary_filds">
                   <div className="price-cut">GST :</div>
@@ -84,18 +120,33 @@ const CheckOut = () => {
                 </div>
                 <div className="common_order_summary_filds">
                   <div className="price-cut">Items :</div>
-                  <div> 29393</div>
+                  <div> </div>
                 </div>
                 <div className="common_order_summary_filds">
                   <div className="price-cut">Promotion Applied :</div>
-                  <div> -300</div>
+                  <div> -1500 </div>
                 </div>
                 <div className="Oder_summery_total">
                   <div className="price-cut">Order Total :</div>
-                  <div className="price-cut"> 29093</div>
+                  <div className="price-cut">
+                    {" "}
+                    {WayToMakePayment.totalAmount - 1500}
+                  </div>
                 </div>
                 <div className="Oder_summery_total checkout_confirm_btn">
-                  <Button btn_name="Confirm Booking" />
+                  <Button
+                    btn_name="Confirm Booking"
+                    onClick={() =>
+                      HandleConfirmBooking(
+                        WayToMakePayment.dateTimeIn,
+                        WayToMakePayment.dateTimeOut,
+                        WayToMakePayment.img,
+                        WayToMakePayment.place_name,
+                        WayToMakePayment.rating,
+                        WayToMakePayment.totalAmount - 1500
+                      )
+                    }
+                  />
                 </div>
               </div>
             </div>
@@ -123,7 +174,7 @@ const CheckOut = () => {
                     </div>
                     <div className="placeview-price">
                       <div className="placeview-rupe">
-                        ₹{WayToMakePayment.totalAmount}
+                        ₹{WayToMakePayment.totalAmount - 1500}
                       </div>
                       <div className="placeview-btns">
                         <Button
@@ -137,11 +188,10 @@ const CheckOut = () => {
                             HandleConfirmBooking(
                               WayToMakePayment.dateTimeIn,
                               WayToMakePayment.dateTimeOut,
-
                               WayToMakePayment.img,
                               WayToMakePayment.place_name,
                               WayToMakePayment.rating,
-                              WayToMakePayment.totalAmount
+                              WayToMakePayment.totalAmount - 1500
                             )
                           }
                         />
@@ -157,7 +207,10 @@ const CheckOut = () => {
               <HelpCom />
             </div>
           </div>
-          <Addres_details onclickClose={handleAddFormClose} />
+          <Addres_details
+            onclickClose={handleAddFormClose}
+            onSubmit={handleFormdetails}
+          />
         </div>
       </div>
     </div>
@@ -165,7 +218,29 @@ const CheckOut = () => {
 };
 export default CheckOut;
 
-const Addres_details = ({ onclickClose }) => {
+const Addres_details = ({ onclickClose, onSubmit }) => {
+  const [formdetails, setFormdeatils] = useState({
+    Name: "",
+    Flat: "",
+    Area: "",
+    Town: "",
+    Phone: "",
+    AreaPincode: "",
+    State: "",
+    Landmark: "",
+  });
+
+  const handleChanges = (e) => {
+    const { name, value } = e.target;
+    setFormdeatils((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = () => {
+    onSubmit(formdetails);
+  };
   return (
     <div className="add_details_form">
       <div className="Address_wrapper">
@@ -180,45 +255,78 @@ const Addres_details = ({ onclickClose }) => {
             <div className="address_details_form_input">
               <label>
                 Full name (First and Last name)
-                <Input className="address_form_name" />
+                <Input
+                  name="Name"
+                  className="address_form_name"
+                  onchange={handleChanges}
+                />
               </label>
               <div className="common_class_form">
                 <label>
                   Mobile number
-                  <Input className="address_form_name" />
+                  <Input
+                    name="Phone"
+                    className="address_form_name"
+                    onchange={handleChanges}
+                  />
                 </label>
                 <label>
                   Area pincode
-                  <Input className="address_form_name" />
+                  <Input
+                    name="AreaPincode"
+                    className="address_form_name "
+                    onchange={handleChanges}
+                  />
                 </label>
               </div>
 
               <label>
                 Flat, House no., Building, Company
-                <Input className="address_form_name" />
+                <Input
+                  name="Flat"
+                  className="address_form_name"
+                  onchange={handleChanges}
+                />
               </label>
               <label>
                 Area, Street, Sector, Village
-                <Input className="address_form_name" />
+                <Input
+                  name="Area"
+                  className="address_form_name"
+                  onchange={handleChanges}
+                />
               </label>
               <label>
                 Landmark
-                <Input className="address_form_name" />
+                <Input
+                  name="Landmark"
+                  className="address_form_name"
+                  onchange={handleChanges}
+                />
               </label>
               <div className="common_class_form">
                 <label>
                   Town/City
-                  <Input className="address_form_name" />
+                  <Input
+                    name="Town"
+                    className="address_form_name"
+                    onchange={handleChanges}
+                  />
                 </label>
                 <label>
                   State
-                  <Input className="address_form_name" />
+                  <Input
+                    name="State"
+                    className="address_form_name"
+                    onchange={handleChanges}
+                  />
                 </label>
               </div>
 
               <Button
                 btn_name="Use this address"
                 className="adderss_form_add_btn"
+                onClick={handleSubmit}
               />
             </div>
           </div>

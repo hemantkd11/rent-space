@@ -23,6 +23,7 @@ nav ul li a {
   align-items: center;
   color: black;
 }
+
 nav ul li a:hover {
   background-color: #fefe58;
 }

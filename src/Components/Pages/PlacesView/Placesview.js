@@ -103,7 +103,23 @@ export const PlacesView = () => {
       setFilterDb([]);
     }
   }, [search]);
+  // export const DB = [
+  //   {
+  //     location: [
+  //       {
+  //         id: 1,
+  //         area_name: "kormagala",
+  //         place: [
+  //           {
+  //             id: 9,
+  //             img_url: Meeting_place1,
+  //             area: " kormagala, bangalore",
+  //             place_name: "reserviour",
+  //             price: 2699,
+  //             rating: 4.1,
+  //           },
   console.log("filterDb0", filterDb);
+
   return (
     <div className=" App-page-container ">
       <div className=" App-page-Inner-container">

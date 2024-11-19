@@ -3,7 +3,6 @@ import React from "react";
 
 const Address = ({
   name,
-
   add_class1,
   add_class2,
   add_heading,
@@ -18,7 +17,7 @@ const Address = ({
   onClick_change_add,
   onClick_add_new_address,
   flat,
-  Area,
+  area,
   town,
 }) => {
   return (
@@ -40,9 +39,11 @@ const Address = ({
 
       <div className={add_class2}>
         <div className={add_details_class}>
-          <p className={add_name}>{name ? name : "Hemant Kumar Diwakar"}</p>
-          <p className={add_home}>{flat ? flat : "100 Kritsal Rubi"} </p>
-          <p className={add_loc}>{Area ? Area : "HAL Main road"}</p>
+          <p className={add_name}>
+            {name ? name : "Hello welcome to on-space"}
+          </p>
+          <p className={add_home}>{flat ? flat : "web application "} </p>
+          <p className={add_loc}>{area ? area : "HAL Main road"}</p>
           <p className={add_state}>
             {town ? town : "Bengaluru, Karnataka 560101"}
           </p>
