@@ -32,8 +32,14 @@ const CheckOut = () => {
     handleAddFormClose();
   };
 
-  const saveAddress = JSON.parse(localStorage.getItem("addressDetails"));
-  console.log("saveAddress", saveAddress);
+  const saveAddress = JSON.parse(localStorage.getItem("addressDetails")) || {
+    Name: "Hello Welcome",
+    Area: "",
+    Flat: "",
+    Town: "",
+    State: "",
+    AreaPincode: "",
+  };
 
   const [{ Add_Date_Time_Details, Card_details, WayToMakePayment }, dispatch] =
     useStateValue();
@@ -93,15 +99,11 @@ const CheckOut = () => {
                     add_change_address="add_change_btn add_address_btn"
                     onClick_add_new_address={handleAddForm}
                     name={saveAddress.Name}
-                    area={saveAddress.Area}
-                    flat={saveAddress.Flat}
+                    area={saveAddress.Area || ""}
+                    flat={saveAddress.Flat || ""}
                     town={
                       saveAddress.Town
-                        ? saveAddress.Town +
-                          ",  " +
-                          saveAddress.State +
-                          ", " +
-                          saveAddress.AreaPincode
+                        ? `${saveAddress.Town}, ${saveAddress.State}, ${saveAddress.AreaPincode}`
                         : "Bengaluru, Karnataka 560101"
                     }
                   />
